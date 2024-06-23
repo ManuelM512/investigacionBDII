@@ -8,7 +8,7 @@ def connectionEngine(host, db, user, pw):
     return engine
 
 
-def loadDatabase(engine):
+def loadDataToEngine(engine):
     folder = "csv"
     for filename in os.listdir(folder):
         path = os.path.join(folder, filename)
@@ -17,9 +17,11 @@ def loadDatabase(engine):
         dataframe.to_sql(filename[:-4], engine, if_exists="replace", index=False)
 
 
-def main():
+def loadDatabase():
     engine = connectionEngine("localhost", "formulaUno", "root", "root")
     loadDatabase(engine)
 
 
-main()
+def main():
+    # loadDatabase() # Utilizado para cargar los datos desde CSV a la BD
+    print()
