@@ -1,3 +1,4 @@
+# Necesario de ejecutar esta parte
 CREATE DATABASE formulaUno;
 use formulaUno;
 
